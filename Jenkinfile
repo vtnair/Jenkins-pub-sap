@@ -4,12 +4,8 @@ pipeline{
         stage("Git Checkout"){
             steps{
                 git credentialsId: 'vt-jenkin', url: 'https://github.com/vtnair/eks-demo-pub-sap/'
+                sh "terraform apply -y"
             }
-        }
-        stage("Terraform Execution"){
-                steps{
-                    sh "terraform apply -y"
-                }
         }   
     }
 }
