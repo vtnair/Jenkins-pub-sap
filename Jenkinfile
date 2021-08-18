@@ -8,7 +8,7 @@ pipeline{
         }
         stage("Terraform Execution"){
                 steps{
-                    sh "terraform apply -y
+                    sh "terraform apply -y"
                 }
         }   
     }
