@@ -5,7 +5,7 @@ pipeline{
             steps{
                 git credentialsId: 'vt-jenkin', url: 'https://github.com/vtnair/eks-demo-pub-sap/'
                 sh "terraform init"
-                sh "terraform apply --auto-approve"
+                sh "terraform apply --auto-approve -var-file '/tmp/variables.tfvars'"
             }
         }   
     }
